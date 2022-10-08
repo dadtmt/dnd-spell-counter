@@ -1,3 +1,35 @@
 table:
   name: counters
   schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - character_id
+        - current_value
+        - initial_value
+        - name
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - current_value
+        - id
+        - initial_value
+        - name
+      filter: {}
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - current_value
+        - initial_value
+        - name
+      filter: {}
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      backend_only: false
+      filter: {}
