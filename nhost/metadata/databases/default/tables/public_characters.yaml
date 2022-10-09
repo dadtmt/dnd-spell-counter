@@ -13,6 +13,13 @@ array_relationships:
         table:
           name: counters
           schema: public
+  - name: writtenspells
+    using:
+      foreign_key_constraint_on:
+        column: character_id
+        table:
+          name: writtenspells
+          schema: public
 insert_permissions:
   - role: user
     permission:
