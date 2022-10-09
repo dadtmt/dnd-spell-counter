@@ -1,0 +1,50 @@
+table:
+  name: writtenspells
+  schema: public
+object_relationships:
+  - name: character
+    using:
+      foreign_key_constraint_on: character_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+      set:
+        character_id: ""
+      columns:
+        - character_id
+        - dndindex
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - dndindex
+        - id
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - dndindex
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+      check:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: user
+    permission:
+      backend_only: false
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
