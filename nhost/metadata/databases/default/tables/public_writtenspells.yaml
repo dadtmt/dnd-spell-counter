@@ -15,3 +15,29 @@ insert_permissions:
       columns:
         - character_id
         - dndindex
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - dndindex
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+update_permissions:
+  - role: user
+    permission:
+      columns: []
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      backend_only: false
+      filter:
+        character:
+          user_id:
+            _eq: X-Hasura-User-Id
