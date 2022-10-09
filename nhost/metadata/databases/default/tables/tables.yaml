@@ -8,5 +8,6 @@
 - "!include auth_users.yaml"
 - "!include public_characters.yaml"
 - "!include public_counters.yaml"
+- "!include public_spellls.yaml"
 - "!include storage_buckets.yaml"
 - "!include storage_files.yaml"
