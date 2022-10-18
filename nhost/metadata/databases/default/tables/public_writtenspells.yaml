@@ -15,11 +15,13 @@ insert_permissions:
       columns:
         - character_id
         - dndindex
+        - spell_data
 select_permissions:
   - role: user
     permission:
       columns:
         - dndindex
+        - spell_data
       filter:
         character:
           user_id:
