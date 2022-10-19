@@ -13,6 +13,7 @@ insert_permissions:
           user_id:
             _eq: X-Hasura-User-Id
       columns:
+        - castable
         - character_id
         - dndindex
         - spell_data
@@ -20,6 +21,7 @@ select_permissions:
   - role: user
     permission:
       columns:
+        - castable
         - dndindex
         - spell_data
       filter:
@@ -29,7 +31,8 @@ select_permissions:
 update_permissions:
   - role: user
     permission:
-      columns: []
+      columns:
+        - castable
       filter:
         character:
           user_id:
