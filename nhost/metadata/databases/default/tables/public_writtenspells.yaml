@@ -23,6 +23,7 @@ select_permissions:
       columns:
         - castable
         - dndindex
+        - id
         - spell_data
       filter:
         character:
